@@ -1,0 +1,65 @@
+.line-menu-block {
+  position: relative;
+
+  + * {
+    margin-top: 1rem;
+  }
+}
+
+.line-menu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+
+  @include media-breakpoint-up(xl) {
+    width: 150%;
+  }
+
+  &-item {
+    position: relative;
+    font-family: $FontFamilySansSerif;
+    font-size: 12px;
+    text-align: left;
+    color: $color-black;
+    font-weight: 500;
+
+    min-height: 1px;
+    width: 50%;
+    padding-left: 1.5rem;
+    padding-right: 0.5rem;
+    cursor: default;
+
+    @include media-breakpoint-up(xl) {
+      transition: transform 100ms linear, opacity 200ms ease-in;
+      opacity: 0.8;
+      will-change: transform, opacity;
+      &:hover {
+        transform: translateY(-5%);
+        opacity: 1;
+      }
+    }
+
+    &:nth-child(n + 3) {
+      margin-top: 1em;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 1rem;
+      top: 9px;
+      left: 0;
+      height: 2px;
+      background-color: $color-cerulean;
+    }
+
+    @include media-breakpoint-up(md) {
+      font-size: 16px;
+    }
+
+    @include media-breakpoint-up(xl) {
+      letter-spacing: -0.025vw;
+      font-size: vw(14, 1920);
+    }
+  }
+}

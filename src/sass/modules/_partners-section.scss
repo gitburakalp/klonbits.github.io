@@ -1,0 +1,28 @@
+.partners-section {
+  @include media-breakpoint-down(md) {
+    padding-left: 15px;
+    padding-right: 15px;
+
+    [class*="col-"] {
+      margin-top: 1.5rem;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    $val: calcPercent(321.5, 1920) * 1%;
+    padding-left: $val;
+    padding-right: $val;
+
+    img {
+      width: auto;
+      max-width: 100%;
+      height: vw(120, 1920);
+    }
+
+    .title {
+      max-width: 70%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

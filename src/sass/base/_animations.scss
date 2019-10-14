@@ -1,0 +1,501 @@
+$rightPathOtelbitsWidth: 595.06103515625;
+$leftPathOtelbitsWidth: 512.0321655273438;
+$b2bPathStartWidth: 66;
+$b2bPathTopWidth: 231.9432830810547;
+$b2bPathBottomWidth: 231.94174194335938;
+$fomPathWidth: 813.947509765625;
+
+$scLineWidth: 466;
+$scPathLeftTopWidth: 338.9432678222656;
+$scPathLeftBottomWidth: 465.9416809082031;
+$scPathRightTopWidth: 338.94366455078125;
+$scPathRightBottomWidth: 465.94366455078125;
+$scPathOffWidth: 778.1371459960938;
+
+@include makePathKeyframe(
+  path1Anim,
+  $leftPathOtelbitsWidth,
+  $leftPathOtelbitsWidth * 2
+);
+
+@include makePathKeyframe(path2Anim, $rightPathOtelbitsWidth, 0);
+
+@include makePathKeyframe(line1draw, 264, 264 * 2);
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInTop {
+  from {
+    opacity: 0;
+    top: 20px;
+  }
+
+  to {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+@keyframes fadeInBottom {
+  from {
+    opacity: 0;
+    top: -20px;
+  }
+
+  to {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+@include makePathKeyframe(pathStartAnim, $b2bPathStartWidth, 0);
+
+@include makePathKeyframe(pathTopAnim, $b2bPathTopWidth, $b2bPathTopWidth * 2);
+
+@include makePathKeyframe(
+  pathBottomAnim,
+  $b2bPathBottomWidth,
+  $b2bPathBottomWidth * 2
+);
+
+@include makePathKeyframe(pathFOMAnim, $fomPathWidth, 0);
+
+@include makePathKeyframe(scPathLeftTopAnim, $scPathLeftTopWidth, 0);
+
+@include makePathKeyframe(scPathTopAnim, $scPathRightTopWidth, 0);
+
+@include makePathKeyframe(scLineAnim, $scLineWidth, 0);
+
+@include makePathKeyframe(
+  scPathLeftBottomAnim,
+  $scPathRightBottomWidth,
+  $scPathRightBottomWidth * 2
+);
+
+@include makePathKeyframe(
+  scPathRightBottomAnim,
+  $scPathRightBottomWidth,
+  $scPathRightBottomWidth * 2
+);
+
+@include makePathKeyframe(scPathOffAnim, $scPathOffWidth, $scPathOffWidth * 2);
+
+@keyframes bottomToTop {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.otelbits-section {
+  &.is-shown {
+    transition-delay: 200ms;
+
+    #otelbitsPath-left {
+      @include pathAnimationProps(
+        $leftPathOtelbitsWidth,
+        $leftPathOtelbitsWidth,
+        path1Anim,
+        1s,
+        1s
+      );
+    }
+
+    #otelbitsPath-right {
+      @include pathAnimationProps(
+        $rightPathOtelbitsWidth,
+        $rightPathOtelbitsWidth,
+        path2Anim,
+        1s,
+        1s
+      );
+    }
+
+    #otelbitsLine-1,
+    #otelbitsLine-2 {
+      @include pathAnimationProps(264, 264, line1draw, 1s, 1s);
+    }
+
+    #svgOtelBitsB2B {
+      #pathStart {
+        @include pathAnimationProps(
+          $b2bPathStartWidth,
+          $b2bPathStartWidth,
+          pathStartAnim,
+          500ms,
+          1s
+        );
+      }
+
+      #pathTop {
+        @include pathAnimationProps(
+          $b2bPathTopWidth,
+          $b2bPathTopWidth,
+          pathTopAnim,
+          1s,
+          1.5s
+        );
+      }
+
+      #pathBottom {
+        @include pathAnimationProps(
+          $b2bPathBottomWidth,
+          $b2bPathBottomWidth,
+          pathBottomAnim,
+          1s,
+          1.5s
+        );
+      }
+    }
+
+    #svgOtelbitsFOM #pathFOM {
+      @include pathAnimationProps(
+        $fomPathWidth,
+        $fomPathWidth,
+        pathFOMAnim,
+        2s,
+        1s
+      );
+    }
+
+    #svgSalesChannelsPath #pathLeftTop {
+      @include pathAnimationProps(
+        $scPathLeftTopWidth,
+        $scPathLeftTopWidth,
+        scPathLeftTopAnim,
+        1.25s,
+        1s
+      );
+    }
+
+    #svgSalesChannelsPath #pathRightTop {
+      @include pathAnimationProps(
+        $scPathRightTopWidth,
+        $scPathRightTopWidth,
+        scPathTopAnim,
+        1.25s,
+        1s
+      );
+    }
+
+    #svgSalesChannelsPath #pathLine {
+      @include pathAnimationProps(
+        $scLineWidth,
+        $scLineWidth,
+        scLineAnim,
+        2s,
+        1.5s
+      );
+    }
+
+    #svgSalesChannelsPath #pathLeftBottom {
+      @include pathAnimationProps(
+        $scPathRightBottomWidth,
+        $scPathRightBottomWidth,
+        scPathLeftBottomAnim,
+        1s,
+        2.5s
+      );
+    }
+
+    #svgSalesChannelsPath #pathRightBottom {
+      @include pathAnimationProps(
+        $scPathRightBottomWidth,
+        $scPathRightBottomWidth,
+        scPathRightBottomAnim,
+        1s,
+        2.5s
+      );
+    }
+
+    #svgSalesChannelsPath #pathOff {
+      @include pathAnimationProps(
+        $scPathOffWidth,
+        $scPathOffWidth,
+        scPathOffAnim,
+        2s,
+        2s
+      );
+    }
+
+    .cards {
+      opacity: 0;
+      will-change: opacity;
+      animation: fadeIn 200ms ease-in forwards;
+    }
+
+    .online-marketing-management {
+      .cards {
+        &:nth-child(1) {
+          animation-delay: 500ms;
+        }
+
+        &:nth-child(2) {
+          animation-delay: 2s;
+        }
+
+        &:nth-child(3) {
+          animation-delay: 1.65s;
+        }
+
+        &:nth-child(4) {
+          animation-delay: 1.65s;
+        }
+
+        &:nth-child(5) {
+          animation-delay: 2s;
+        }
+      }
+    }
+
+    .b2b {
+      .cards {
+        &:nth-child(1) {
+          animation-delay: 500ms;
+        }
+
+        &:nth-child(2) {
+          animation-delay: 2.5s;
+        }
+
+        &:nth-child(3) {
+          animation-delay: 2.5s;
+        }
+      }
+    }
+
+    .finance-operation-management {
+      .cards {
+        &:nth-child(1) {
+          animation-delay: 500ms;
+        }
+
+        &:nth-child(2) {
+          animation-delay: 2.25s;
+        }
+
+        &:nth-child(3) {
+          animation-name: fadeInTop;
+          animation-duration: 500ms;
+          animation-delay: 2.75s;
+        }
+
+        &:nth-child(4) {
+          animation-name: fadeInBottom;
+          animation-duration: 500ms;
+          animation-delay: 2.85s;
+        }
+      }
+
+      .hotel-system {
+        &-block {
+          opacity: 0;
+          will-change: opacity;
+          animation: fadeIn 200ms ease-in forwards;
+          animation-delay: 3s;
+
+          .cards-title {
+            opacity: 0;
+            will-change: opacity;
+            animation: bottomToTop $duration ease-in forwards;
+            animation-delay: 3.25s;
+          }
+        }
+      }
+    }
+
+    .sales-channels {
+      .cards {
+        &:nth-child(1) {
+          animation-delay: 1s;
+        }
+
+        &:nth-child(2),
+        &:nth-child(3) {
+          animation-delay: 2s;
+        }
+
+        &:nth-child(4) {
+          animation-delay: 2.5s;
+        }
+
+        &:nth-child(5) {
+          animation-delay: 3.5s;
+        }
+      }
+    }
+  }
+
+  &:not(.is-shown) {
+    opacity: 0;
+  }
+}
+
+@include makeKeyframe(bottomToTopAnim) {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.other-solutions-section {
+  .slider-slide {
+    @include media-breakpoint-up(xl) {
+      &--active {
+        .cards > * {
+          @for $i from 2 to 5 {
+            &:nth-child(#{$i}) {
+              opacity: 0;
+              animation: bottomToTopAnim 500ms linear forwards;
+              animation-delay: $i * 0.25s;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include makeKeyframe(fadeIn) {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 400ms ease-in;
+}
+
+@include media-breakpoint-down(lg) {
+  .header {
+    &-menu__item {
+      transition: opacity $duration ease-in;
+    }
+
+    &:not(.is-shown) {
+      .header-menu__item {
+        opacity: 0;
+      }
+    }
+
+    &.is-shown {
+      @for $i from 1 to 6 {
+        .header-menu__item:nth-child(#{$i}) {
+          transition-delay: $i * 0.35s;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .main section {
+    .title--light.lo {
+      transition: all 400ms ease-in;
+    }
+
+    &:not(.is-shown) {
+      .title--light.lo {
+        opacity: 0;
+        top: -15px;
+      }
+    }
+
+    &.is-shown {
+      .title--light.lo {
+        opacity: 1;
+        top: 0;
+      }
+    }
+  }
+
+  .poe-section {
+    &:not(.is-shown) {
+      img {
+        transform: translateX(-25%);
+      }
+
+      .main-title,
+      img,
+      .circle-list-item {
+        opacity: 0;
+      }
+    }
+
+    &.is-shown {
+      .main-title {
+        transition-delay: 400ms;
+      }
+
+      img {
+        transition: all 750ms ease-in;
+        transition-delay: 550ms;
+      }
+
+      @for $i from 1 to 5 {
+        .circle-list-item {
+          transition: opacity 400ms ease-in;
+          will-change: opacity;
+          &:nth-child(#{$i}) {
+            transition-delay: 1s + ($i * 0.25s);
+          }
+        }
+      }
+    }
+  }
+
+  .content-img-section {
+    &:not(.is-shown) {
+      * {
+        opacity: 0;
+      }
+    }
+
+    &.is-shown {
+      .main {
+        &-title {
+          transition-delay: 250ms;
+        }
+
+        &-description {
+          transition-delay: 600ms;
+        }
+      }
+
+      @for $i from 1 to 5 {
+        .line-menu-item:nth-child(#{$i}) {
+          transition-delay: 600ms + ($i * 350ms);
+        }
+      }
+
+      .btn {
+        transition-delay: 2250ms;
+      }
+
+      img {
+        transition-delay: 2650ms;
+      }
+    }
+  }
+}

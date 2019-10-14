@@ -1,0 +1,41 @@
+.slider {
+  @include media-breakpoint-up(md) {
+    &-section {
+      .slider {
+        &-slide {
+          &:not(.slider-slide--active) {
+            %opacity-0 {
+              opacity: 0;
+              visibility: hidden;
+              z-index: -1;
+            }
+
+            .main {
+              &-title,&-description {
+                @extend %opacity-0;
+              }
+            }
+
+            .btn {
+              @extend %opacity-0
+            }
+          }
+        }
+      }
+
+      .main {
+        &-title {
+          transition-delay: 500ms;
+        }
+  
+        &-description {
+          transition-delay: 1000ms;
+        }
+      }
+
+      .btn {
+        transition-delay: 1350ms;
+      }
+    }
+  }
+}

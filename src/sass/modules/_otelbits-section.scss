@@ -1,0 +1,408 @@
+.otelbits {
+  &-section {
+    @include media-breakpoint-down(lg) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      min-height: calcPercent(474.4, 375) + vw;
+
+      background-image: url('/Storage/homepage/otelbits-bg.png');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      div {
+        &:not(.otelbits-title-block) {
+          display: none;
+        }
+
+        &.otelbits-title-block {
+          position: absolute;
+          max-width: 65%;
+
+          object {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+
+    .cards-title {
+      font-family: $FontFamilySansSerif;
+      line-height: 1.2;
+      color: $color-slate;
+      text-align: center;
+
+      @include media-breakpoint-up(xl) {
+        font-size: vw(10, 1280);
+        letter-spacing: vw(0.64, 1920);
+        margin-top: vw(14, 1920);
+      }
+
+      @include media-breakpoint-up(xl) {
+        font-size: vw(14, 1920);
+      }
+    }
+
+    @include media-breakpoint-up(xl) {
+      position: relative;
+
+      padding-top: 7.7vw;
+      padding-bottom: 49vw;
+
+      // padding-top: 25vh;
+      // height: calcPercent(1851.44, 1080) + vh;
+
+      background-image: url($storageSvgPath+'otelbits-bg-path.svg');
+      background-size: 180%;
+      background-repeat: no-repeat;
+      background-position: 40% 35%;
+      z-index: 1;
+
+      .cards-section {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+
+        .cards {
+          position: absolute;
+          box-shadow: 0 0 3px 0 rgba($color-black, 0.15);
+          cursor: pointer;
+          z-index: 99;
+
+          transition: all 200ms ease-in;
+          background-color: $color-white;
+
+          &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            background: linear-gradient(
+              to top,
+              rgba($color-cerulean, 0.5),
+              rgba($color-cerulean, 0.35),
+              rgba($color-cerulean, 0.25),
+              $color-white
+            );
+            z-index: -1;
+          }
+
+          &:not(.is-active) {
+            .cards-menu {
+              visibility: hidden;
+              z-index: -1;
+              max-height: 0px;
+            }
+          }
+
+          &.is-active {
+            &:before {
+              transition: all 400ms ease;
+              opacity: 1;
+            }
+          }
+
+          &-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            background-color: $color-white;
+            padding: vw(12, 1920);
+          }
+
+          &.bg-transparent {
+            box-shadow: none;
+          }
+
+          &--sm {
+            padding: vw(17, 1920) vw(28, 1920);
+
+            .cards-title {
+              margin: 0;
+            }
+          }
+
+          &:hover {
+            filter: drop-shadow(
+              0 4px 10px rgba($color-cerulean, 0.25)
+            );
+          }
+
+          img {
+            max-height: 5vw;
+          }
+
+          &-menu {
+            list-style: disc;
+            padding-left: 24px;
+            margin-left: -24px;
+            margin-top: 1rem;
+            overflow: hidden;
+            max-height: 100%;
+            width: calc(100% + 45px);
+            transition: all 600ms ease-in;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-right: 10px;
+            z-index: 999;
+            box-shadow: 0 1px 4px rgba($color-steel, 0.35);
+
+            background-color: rgba($color-white, 0.85);
+
+            &::before {
+              content: 'i';
+              position: absolute;
+              top: 10px;
+              right: 10px;
+              visibility: visible;
+              border: 1px solid rgba($color-cerulean, 0.35);
+              border-radius: 100%;
+              color: rgba($color-cerulean, 0.5);
+              font-weight: 600;
+              padding: 0px 8px;
+              font-size: fluidSize(10, 14, 768, 1920);
+              font-style: italic;
+            }
+
+            &-item {
+              font-family: $FontFamilySansSerif;
+              font-size: vw(12, 1920);
+              font-weight: 400;
+              line-height: 1.2;
+              color: $color-cerulean;
+              text-transform: uppercase;
+
+              + * {
+                margin-top: 0.5vw;
+              }
+            }
+          }
+        }
+      }
+
+      .online-marketing-management {
+        position: relative;
+        max-width: calcPercent(880, 1920) + vw;
+        margin: 0 auto;
+        z-index: 999;
+
+        @for $i from 1 to 5 {
+          .cards {
+            &:nth-child(#{$i}) {
+              z-index: 999 + $i;
+            }
+          }
+        }
+
+        .cards {
+          &:nth-child(1) {
+            left: 50%;
+            transform: translate(-50%, 79%);
+          }
+
+          &:nth-child(2) {
+            transform: translateX(-50%);
+          }
+
+          &:nth-child(3) {
+            left: 9.6vw;
+            transform: translateY(-70%);
+          }
+
+          &:nth-child(4) {
+            right: 9.6vw;
+            transform: translateY(-70%);
+          }
+
+          &:nth-child(5) {
+            right: 0;
+            transform: translate(48%, 0%);
+          }
+        }
+      }
+
+      .b2b {
+        position: relative;
+        top: 8vw;
+        left: calcPercent(103, 1920) + vw;
+        width: calcPercent(562, 1920) + vw;
+
+        @for $i from 1 to 5 {
+          .cards {
+            &:nth-child(#{$i}) {
+              z-index: 999 - $i;
+            }
+          }
+        }
+
+        svg {
+          position: absolute;
+          right: 10.5vw;
+          transform: translateY(-16%);
+          max-width: calcPercent(155, 1920) + vw;
+        }
+
+        .cards {
+          &:nth-child(1) {
+            right: 0;
+          }
+
+          &:nth-child(2) {
+            transform: translateY(-75%);
+          }
+
+          &:nth-child(3) {
+            transform: translateY(75%);
+          }
+        }
+      }
+
+      .finance-operation-management {
+        position: relative;
+        width: calcPercent(438.7, 1920) + vw;
+        top: calcPercent(81, 1920) + vw;
+        right: calcPercent(265, 1920) + vw;
+        margin-left: auto;
+
+        .hotel-system {
+          &-block {
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translate(100%, -50%);
+            overflow: hidden;
+
+            img {
+              max-height: 8vw;
+            }
+          }
+        }
+
+        .cards {
+          &:nth-child(1) {
+            transform: translate(43%, 100%);
+          }
+
+          &:nth-child(2) {
+            left: calcPercent(100, 1920) + vw;
+            transform: translateY(-75%);
+          }
+
+          &:nth-child(3) {
+            right: 2vw;
+            transform: translateY(-200%);
+          }
+
+          &:nth-child(4) {
+            right: 2vw;
+            transform: translateY(50%);
+          }
+        }
+      }
+
+      .sales-channels {
+        position: absolute;
+        margin-top: calcPercent(170, 1920) + vw;
+        left: 50%;
+        transform: translateX(-66%);
+        width: calcPercent(873.79, 1920) + vw;
+
+        @for $i from 1 to 5 {
+          .cards {
+            &:nth-child(#{$i}) {
+              z-index: 999 - $i;
+            }
+          }
+        }
+
+        .cards {
+          &-section {
+            min-height: 63.5vh;
+          }
+
+          &:nth-child(1) {
+            left: 54%;
+            transform: translateY(-50%);
+          }
+
+          &:nth-child(2) {
+            left: 20%;
+            transform: translateY(45%);
+          }
+
+          &:nth-child(3) {
+            right: 0;
+            transform: translate(50%, 45%);
+          }
+
+          &:nth-child(4) {
+            left: 54%;
+            top: 10vw;
+          }
+
+          &:nth-child(5) {
+            left: 54%;
+            top: 25vw;
+          }
+        }
+      }
+    }
+
+    .cards {
+      &-section {
+        @include media-breakpoint-up(xl) {
+          img {
+            max-height: calcPercent(95, 1920) + vw;
+          }
+
+          .cards {
+            &:not(.cards--sm) {
+              @include media-breakpoint-up(xl) {
+                width: calcPercent(206.2, 1920) + vw;
+                height: calcPercent(206.2, 1920) + vw;
+                padding: 3px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &-title {
+    @include media-breakpoint-down(lg) {
+      display: block;
+
+      &-block {
+        text-align: center;
+      }
+    }
+
+    @include media-breakpoint-up(xl) {
+      &-block {
+        position: absolute;
+        display: inline-block;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        max-width: 19vw;
+
+        svg,
+        object {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}

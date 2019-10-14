@@ -1,0 +1,16 @@
+<svg id="user-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="27" height="27" viewBox="0 0 27 27">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.513" y1="1.215" x2="0.354" y2="-1.449" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#3fa9f5"/>
+      <stop offset="0.187" stop-color="#66baf7" stop-opacity="0.792"/>
+      <stop offset="0.59" stop-color="#b7dffb" stop-opacity="0.373"/>
+      <stop offset="0.869" stop-color="#ebf6fd" stop-opacity="0.102"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g id="user-icon-2" data-name="user-icon" transform="translate(-11692 -9188.5)" opacity="0.75">
+    <g id="Group_1586" data-name="Group 1586">
+      <path id="Path_1845" data-name="Path 1845" d="M11715.046,9205.954a13.437,13.437,0,0,0-5.13-3.218,7.8,7.8,0,1,0-8.832,0A13.522,13.522,0,0,0,11692,9215.5h2.109a11.391,11.391,0,0,1,22.781,0H11719A13.411,13.411,0,0,0,11715.046,9205.954ZM11705.5,9202a5.7,5.7,0,1,1,5.7-5.7A5.7,5.7,0,0,1,11705.5,9202Z" fill="url(#linear-gradient)"/>
+    </g>
+  </g>
+</svg>

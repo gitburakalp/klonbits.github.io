@@ -1,0 +1,68 @@
+.project-form {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+
+  .main-title--sm {
+    @include media-breakpoint-down(md) {
+      max-width: 85%;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+  }
+
+  &-section {
+    display: flex;
+    flex-wrap: wrap;
+
+    padding-left: 15px;
+    padding-right: 15px;
+
+    align-items: center;
+
+    > * {
+      position: relative;
+      min-height: 1px;
+      width: 100%;
+    }
+
+    @include media-breakpoint-up(xl) {
+      padding-left: vw(240, 1920);
+      padding-right: vw(240, 1920);
+    }
+  }
+
+  &-info {
+    @include media-breakpoint-up(xl) {
+      $val: calcPercent(748, 1920) * 1%;
+      flex: 0 0 $val;
+      max-width: $val;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -30%;
+        left: -30%;
+        width: vw(408, 1920);
+        height: vw(408, 1920);
+        background: linear-gradient(
+          to top,
+          rgba(#e9eff9, 100%) 0%,
+          rgba(#fff, 100%) 65%
+        );
+        border-radius: 100%;
+        z-index: -1;
+      }
+
+      + * {
+        padding-left: vw(240, 1920);
+      }
+    }
+  }
+}
+
+.start-a-project-form {
+  position: relative;
+  display: block;
+}

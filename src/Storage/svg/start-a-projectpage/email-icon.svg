@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="13.776" height="10.493" viewBox="0 0 13.776 10.493">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.509" y1="1.564" x2="0.478" y2="-2.105" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#3fa9f5"/>
+      <stop offset="0.187" stop-color="#66baf7" stop-opacity="0.792"/>
+      <stop offset="0.59" stop-color="#b7dffb" stop-opacity="0.373"/>
+      <stop offset="0.869" stop-color="#ebf6fd" stop-opacity="0.102"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g id="email-icon" transform="translate(-10902.023 -4758.95)" opacity="0.75">
+    <g id="Group_360" data-name="Group 360" transform="translate(360 -58)">
+      <path id="Path_314" data-name="Path 314" d="M10554.589,4816.95h-11.354a1.213,1.213,0,0,0-1.211,1.211v8.072a1.213,1.213,0,0,0,1.211,1.211h11.354a1.213,1.213,0,0,0,1.211-1.211v-8.072A1.213,1.213,0,0,0,10554.589,4816.95Zm-.168.807-5.484,5.485-5.531-5.485Zm-11.591,8.309v-7.742l3.888,3.854Zm.571.571,3.89-3.89,1.363,1.351a.4.4,0,0,0,.568,0l1.33-1.329,3.869,3.869Zm11.591-.571-3.869-3.869,3.869-3.869Z" fill="url(#linear-gradient)"/>
+    </g>
+  </g>
+</svg>

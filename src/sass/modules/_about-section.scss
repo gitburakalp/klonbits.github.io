@@ -1,0 +1,198 @@
+.about-us {
+  &-logo {
+    max-width: calcPercent(284, 375) + vw;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include media-breakpoint-up(md) {
+      padding-top: calcPercent(224, 1920) + vw !important;
+      max-width: calcPercent(635, 768) + vw;
+    }
+
+    @include media-breakpoint-up(xl) {
+      max-width: calcPercent(784, 1920) + vw;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    background-repeat: no-repeat;
+    background-image: url($storageSvgPath+'about-bg-path.svg');
+    background-size: 102%;
+    background-position: 50% 0%;
+  }
+}
+
+.section {
+  &-about-us {
+    .special-cards {
+      width: 340px;
+      height: auto;
+
+      @include media-breakpoint-up(md) {
+        width: 500px;
+        max-height: 228px;
+      }
+
+      @include media-breakpoint-up(xl) {
+        width: calcPercent(500, 1920) + vw;
+      }
+
+      &-block {
+        position: relative;
+        padding-top: 8vw;
+        padding-bottom: 8vw;
+
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+
+        &--row {
+          @include media-breakpoint-down(lg) {
+            align-items: center;
+          }
+
+          > * {
+            @include media-breakpoint-down(lg) {
+              + * {
+                margin-top: 2.5rem;
+              }
+            }
+
+            @include media-breakpoint-up(xl) {
+              &:nth-child(n + 3) {
+                margin-top: 5vw;
+              }
+            }
+          }
+
+          @include media-breakpoint-up(xl) {
+            flex-direction: row;
+            justify-content: space-around;
+
+            max-width: calcPercent(1240, 1920) + vw;
+            margin-left: auto;
+            margin-right: auto;
+          }
+        }
+
+        &--lg {
+          @extend .special-cards-block;
+          counter-reset: sc;
+
+          @include media-breakpoint-up(xl) {
+            max-width: calcPercent(1332, 1920) + vw;
+
+            &::before {
+              background: none !important;
+            }
+          }
+
+          .special-cards {
+            &::before {
+              $val: counters(sc, '.', decimal-leading-zero);
+              position: absolute;
+              left: 0;
+              top: 0;
+              counter-increment: sc;
+              content: $val;
+
+              font-family: $FontFamilySansSerif;
+              font-size: 75px;
+              font-weight: 500;
+              line-height: 1;
+              opacity: 0.5;
+
+              background: linear-gradient(
+                to bottom,
+                $color-light-steel-two 0%,
+                rgba($color-light-steel-two, 0.5) 90%
+              );
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+
+              transform: translate(-30%, -45%);
+
+              @include media-breakpoint-up(md) {
+                font-size: vw(200, 1920);
+              }
+            }
+
+            width: 313px;
+            height: auto;
+
+            text-align: center;
+
+            @include media-breakpoint-down(lg) {
+              + * {
+                margin-top: 3rem;
+              }
+            }
+
+            @include media-breakpoint-up(md) {
+              width: 566px;
+              max-height: 286px;
+            }
+
+            @include media-breakpoint-up(xl) {
+              width: calcPercent(566, 1920) + vw;
+            }
+
+            &__icon {
+              max-height: 44px;
+
+              @include media-breakpoint-up(xl) {
+                max-height: calcPercent(80, 1920) + vw;
+              }
+            }
+
+            &__title {
+              margin-top: 6px;
+
+              @include media-breakpoint-up(xl) {
+                margin-top: 1vw;
+              }
+            }
+
+            &__description {
+              margin-top: 6px;
+
+              @include media-breakpoint-up(xl) {
+                margin-top: 1vw;
+              }
+            }
+          }
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: 50%;
+          top: 0;
+          height: 100%;
+          width: 1px;
+          background: linear-gradient(
+            to bottom,
+            rgba($color-light-steel, 0.05) 0%,
+            rgba($color-light-steel, 0.85) 60%,
+            $color-light-steel
+          );
+        }
+
+        &:not(.special-cards-block--row) {
+          .special-cards {
+            margin-left: auto;
+            margin-right: auto;
+
+            + .special-cards {
+              margin-top: 50px;
+
+              @include media-breakpoint-up(xl) {
+                margin-top: 5vw;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

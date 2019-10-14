@@ -1,0 +1,79 @@
+.slider {
+  &-container {
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 16;
+    padding: 2px;
+  }
+
+  &-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    transition-property: transform;
+    box-sizing: content-box;
+    justify-content: space-between;
+  }
+
+  &-slide {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  &-controller {
+    @include media-breakpoint-up(xl) {
+      position: absolute;
+      top: 50%;
+      left: calcPercent(64, 1920) + vw;
+      transform: translateY(-50%);
+      z-index: 22;
+
+      > * {
+        position: relative;
+        cursor: pointer;
+        transition: all $duration;
+
+        &[class*="-disabled"] {
+          opacity: 0.35;
+        }
+
+        &::before {
+          font-family: "Font Awesome 5 Pro";
+          font-weight: 300;
+          font-size: 24px;
+        }
+
+        &:hover {
+          transform: scale(1.5);
+
+          &:before {
+            color: $color-cerulean;
+          }
+        }
+
+        &.next {
+          &::before {
+            content: "\f054";
+          }
+
+          + * {
+            margin-top: calcPercent(42, 1080) + vh;
+          }
+        }
+
+        &.prev {
+          &::before {
+            content: "\f053";
+          }
+        }
+      }
+    }
+  }
+}

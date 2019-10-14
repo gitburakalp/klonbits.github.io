@@ -1,0 +1,208 @@
+%circles {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 100%;
+  // background-color: $color-cerulean;
+  opacity: 0.075;
+  margin-right: 1rem;
+
+  @include media-breakpoint-down(lg) {
+    left: 50%;
+  }
+
+  @include media-breakpoint-up(md) {
+    width: 79px;
+    height: 79px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    width: fluidSize(44, 79, 1280, 1920);
+    height: fluidSize(44, 79, 1280, 1920);
+  }
+}
+
+.circle-list {
+  @include media-breakpoint-down(lg) {
+    margin-top: 1rem;
+  }
+
+  @include media-breakpoint-up(xl) {
+    max-width: 35vw;
+  }
+
+  &-item {
+    position: relative;
+
+    font-family: $FontFamilySansSerif;
+    font-size: 12px;
+    line-height: 1.2;
+    letter-spacing: 0.43px;
+    font-weight: 300;
+    color: $color-slate;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include media-breakpoint-up(md) {
+      display: block;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.7;
+      letter-spacing: normal;
+      flex-direction: row;
+      padding-top: vw(109, 1280);
+    }
+
+    @include media-breakpoint-down(sm) {
+      padding-top: 50px;
+    }
+
+    @include media-breakpoint-up(xl) {
+      font-size: vw(16, 1920);
+      padding-top: 0;
+      padding-left: fluidSize(50, 100, 768, 1920);
+      text-align: justify;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: center;
+      width: 40px;
+      height: 40px;
+      z-index: 99;
+      filter: drop-shadow(
+        1px 2px 1px rgba($color-slate, 0.075)
+      );
+
+      @include media-breakpoint-up(md) {
+        width: vw(60, 1280);
+        height: vw(60, 1280);
+      }
+
+      @include media-breakpoint-down(lg) {
+        top: -5%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      @include media-breakpoint-up(xl) {
+        width: vw(60, 1920);
+        height: vw(60, 1920);
+
+        top: 50%;
+        left: vw(25, 1920);
+        transform: translateY(-50%);
+      }
+    }
+
+    &.icon {
+      &-job-seeker {
+        &::after {
+          background-image: url($storageSvgPath+'homepage/job-seeker.svg');
+        }
+      }
+
+      &-direct {
+        &::after {
+          background-image: url($storageSvgPath+'homepage/direct-booking.svg');
+        }
+      }
+      &-robust {
+        &::after {
+          background-image: url($storageSvgPath+'homepage/robust-booking.svg');
+        }
+      }
+      &-online-payment {
+        &::after {
+          background-image: url($storageSvgPath+'homepage/online-payment.svg');
+        }
+      }
+    }
+
+    + * {
+      margin-top: 40px;
+
+      @include media-breakpoint-up(xl) {
+        margin-top: 4vw;
+      }
+    }
+  }
+}
+
+.circle {
+  display: block;
+  width: 93.8px;
+  height: 93.8px;
+  border-radius: 100%;
+
+  &--cerulean {
+    @extend .circle;
+  }
+
+  &-block {
+    position: relative;
+    display: block;
+    width: 93.8px;
+    height: 93.8px;
+    margin: 0 auto;
+
+    @include media-breakpoint-up(md) {
+      width: 213px;
+      height: 213px;
+    }
+
+    @include media-breakpoint-up(xl) {
+      $val: calcPercent(225, 1920) + vw;
+      width: $val;
+      height: $val;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 100%;
+    }
+
+    &--cerulean {
+      @extend .circle-block;
+      transition: all 4s
+        cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transition-delay: 400ms;
+
+      &::after {
+        top: 7px;
+
+        @include media-breakpoint-up(xl) {
+          top: calcPercent(14, 1080) + vh;
+        }
+      }
+
+      &::before,
+      &::after {
+        background-image: linear-gradient(
+          to top,
+          rgba(#3fa9f5, 1) 0%,
+          rgba(#66baf7, 0.79) 19%,
+          rgba(#b7dffb, 0.37) 59%,
+          rgba(#ebf6fd, 0.1) 87%,
+          rgba(#ffffff, 0) 100%
+        );
+        opacity: 0.2;
+      }
+    }
+  }
+}

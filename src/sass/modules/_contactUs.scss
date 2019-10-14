@@ -1,0 +1,65 @@
+.section-contactUs {
+  background-repeat: no-repeat;
+  background-size: 125%;
+  background-position: 100% -30%;
+  background-image: url($storageSvgPath+'contactpage/contact-us-path.svg');
+
+  @include media-breakpoint-down(md) {
+    .container {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    padding: 4vw 0 18vw;
+    background-size: 100%;
+    background-position: center;
+  }
+
+  .form-control {
+    font-family: $FontFamilySansSerif;
+    font-size: 14px;
+    font-weight: 500;
+    color: $color-slate;
+    background-color: transparent;
+    border-color: $color-cloud-grey;
+    padding: 1.5rem 1rem;
+
+    &::placeholder {
+      color: $color-bluish-grey;
+    }
+
+    @include media-breakpoint-up(md) {
+      font-size: 16px;
+      letter-spacing: vw(0.64, 1920);
+      padding: 1.875vw 1.5vw;
+      background-color: rgba($color-white, 0.35);
+      border-color: $color-warm-grey-two;
+    }
+
+    @include media-breakpoint-up(xl) {
+      font-size: vw(16, 1920);
+    }
+  }
+
+  .icon-blocks {
+    display: block;
+  }
+}
+
+.section-map {
+  #googleMap {
+    position: relative;
+    filter: drop-shadow(0 0 8px $color-slate);
+
+    iframe {
+      width: 100%;
+      height: calcPercent(335, 375) + vw;
+
+      @include media-breakpoint-up(md) {
+        height: calcPercent(484, 1920) + vw;
+      }
+    }
+  }
+}

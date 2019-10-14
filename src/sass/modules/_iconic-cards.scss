@@ -1,0 +1,120 @@
+.iconic-cards {
+  position: relative;
+  cursor: pointer;
+
+  @include media-breakpoint-up(md) {
+    padding: 0 25px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    padding: 0 vw(54, 1920);
+  }
+
+  &-section {
+    position: relative;
+    margin-top: 30px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    padding-left: 15px;
+    padding-right: 15px;
+
+    @include media-breakpoint-up(xl) {
+      max-width: vw(1310, 1920);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    > * {
+      $val: 39%;
+
+      position: relative;
+      max-width: $val;
+      flex: 0 0 $val;
+      text-align: center;
+
+      @include media-breakpoint-up(xl) {
+        $val: calc(100% / 4);
+
+        flex: 0 0 $val;
+        max-width: $val;
+      }
+
+      @include media-breakpoint-down(md) {
+        &:nth-child(n + 3) {
+          margin-top: 1rem;
+        }
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      margin-top: vw(50, 1920);
+    }
+  }
+
+  &__icon {
+    $val: 55px;
+    max-height: $val;
+    height: $val;
+
+    + * {
+      margin-top: 14px;
+
+      @include media-breakpoint-up(md) {
+        margin-top: 16px;
+      }
+
+      @include media-breakpoint-up(xl) {
+        margin-top: vw(14, 1920);
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      $val: 82px;
+      max-height: $val;
+      height: $val;
+    }
+
+    @include media-breakpoint-up(xl) {
+      $val: vw(119, 1920);
+      max-height: $val;
+      height: $val;
+    }
+  }
+
+  &__title {
+    font-size: 12px;
+    font-weight: 600;
+    color: $color-slate;
+
+    @include media-breakpoint-up(xl) {
+      font-size: vw(16, 1920);
+    }
+
+    + * {
+      display: none;
+      margin-top: 14px;
+
+      @include media-breakpoint-up(md) {
+        margin-top: 16px;
+      }
+
+      @include media-breakpoint-up(xl) {
+        margin-top: vw(20, 1920);
+      }
+    }
+  }
+
+  &__description {
+    font-size: 12px;
+    text-align: left;
+    line-height: 1.47;
+    color: $color-steel;
+
+    @include media-breakpoint-up(xl) {
+      font-size: vw(14, 1920);
+    }
+  }
+}

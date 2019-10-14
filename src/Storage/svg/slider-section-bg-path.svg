@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Component_6_1" width="2337.014" height="1769.837" data-name="Component 6 – 1" viewBox="0 0 2337.014 1769.837">
+    <defs>
+        <style>
+            .cls-1{fill:url(#linear-gradient)}.cls-2{fill:url(#linear-gradient-2)}.cls-3{opacity:.75;fill:url(#linear-gradient-3)}.cls-4{fill:url(#linear-gradient-4)}
+        </style>
+        <linearGradient id="linear-gradient" x1=".5" x2=".5" y1="1.132" y2="-.293" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#e9eff9"/>
+            <stop offset=".199" stop-color="#edf2fa" stop-opacity=".78"/>
+            <stop offset=".596" stop-color="#f6f9fc" stop-opacity=".365"/>
+            <stop offset=".871" stop-color="#fcfdfe" stop-opacity=".102"/>
+            <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="linear-gradient-2" x1=".5" x2=".5" y1="1.457" y2=".032" xlink:href="#linear-gradient"/>
+        <linearGradient id="linear-gradient-3" x1="12.408" x2="12.408" y1="1.254" y2="-.17" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#e9eff9"/>
+            <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="linear-gradient-4" x1=".5" x2=".5" y1=".84" y2="-.585" xlink:href="#linear-gradient"/>
+    </defs>
+    <path id="Path_3058" d="M90 8867.744s337.659 132.128 671.649-201.862S1361.758 8535.612 1591 8553.5c243.5 19 338-157 277-386-45.04-169.085 398-410 122-750-118.174-145.577-1059.522 268.436-1081.543 162H90z" class="cls-1" data-name="Path 3058" transform="translate(50 -7270.76)"/>
+    <path id="Path_3059" d="M-14 9010.559s393.44 153.955 782.6-235.209 775.756 34.883 1026.366-59.871c277.276-104.835 2.244-299.5 21.382-508.905 18.557-203.041-128.295-496.076-346.4-508.906s-504.63-64.148-530.289-188.167H-14z" class="cls-2" data-name="Path 3059" transform="translate(50 -7270.76)"/>
+    <path id="Path_3060" d="M2075 8863.744s-220-271.244-671.649-201.862C936.5 8733.6 720.894 8462.519 689 8282.5c-45-254-111.491-275.325-241-370-145-106 40-372 294-244 162.531 81.906 492.522 13.436 514.543-93 128.457-584 818.457-149 818.457-149z" class="cls-3" data-name="Path 3060" transform="translate(50 -7270.76)"/>
+    <path id="Path_3061" d="M-50 9014.513s271-380.348 833-294.013c580.927 89.242 1256.346-124.748 1177-460-107.716-455.124 115-502 281-427 203.677 92.023-316.233-465.552-632.3-306.276-202.244 101.918-612.864 16.719-640.266-115.724H-50z" class="cls-4" data-name="Path 3061" transform="translate(50 -7270.76)"/>
+</svg>

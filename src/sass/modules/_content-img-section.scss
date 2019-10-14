@@ -1,0 +1,30 @@
+.content-img-section {
+  position: relative;
+  width: calcPercent(326, 375) + vw;
+  margin: 0 auto;
+
+  @include media-breakpoint-up(xl) {
+    margin-left: calcPercent(148.8, 1920) + vw;
+    margin-right: calcPercent(34, 1920) + vw;
+    padding: 4.7022vw 0px;
+    margin-top: -22vw !important;
+
+    img {
+      width: calcPercent(600, 1920) + vw;
+      max-width: unset;
+    }
+  }
+
+  .title--light {
+    position: absolute;
+    left: 0;
+    bottom: 4.7022vw;
+  }
+
+  .row {
+    @include media-breakpoint-up(xl) {
+      padding-left: calcPercent(345.4, 1920) + vw;
+      height: 100%;
+    }
+  }
+}

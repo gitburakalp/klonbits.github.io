@@ -1,0 +1,30 @@
+.hero-section {
+  position: relative;
+
+  .row {
+    justify-content: center;
+    text-align: center;
+
+    > *:first-child {
+      
+
+      @include media-breakpoint-down(md) {
+          + * {
+              margin-top: 5rem
+          }
+      }
+
+      @include media-breakpoint-up(xl) {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: calcPercent(207, 1920) + vw;
+      }
+    }
+
+    @include media-breakpoint-up(xl) {
+      justify-content: start;
+      align-items: center;
+      text-align: left;
+    }
+  }
+}

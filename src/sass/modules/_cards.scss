@@ -1,0 +1,58 @@
+.card {
+  position: relative;
+  border-radius: 0;
+  border: none;
+
+  box-shadow: 0 0 1px rgba($color-slate, 0.35);
+  cursor: default;
+  padding: 10px;
+
+  @include media-breakpoint-up(xl) {
+    padding: vw(20, 1920);
+  }
+
+  &-title {
+    font-family: $FontFamilySansSerif;
+    line-height: 1.2;
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $color-cerulean;
+    text-align: center;
+
+    @include media-breakpoint-up(md) {
+      font-size: 16px;
+    }
+
+    @include media-breakpoint-up(xl) {
+      font-size: vw(16, 1920);
+    }
+  }
+
+  &-blocks {
+    position: relative;
+    display: inline-block;
+    border-radius: 4px;
+
+    font-family: $FontFamilySansSerif;
+    font-size: 12px;
+    padding: 0 0.5rem;
+
+    &--cerulean {
+      background-color: rgba($color-cerulean, 0.2);
+      color: $color-cerulean;
+    }
+
+    &--dull-orange {
+      background-color: rgba($color-dull-orange, 0.2);
+      color: $color-dull-orange;
+    }
+  }
+
+  .btn {
+    @include media-breakpoint-up(md) {
+      font-size: fluidSize(10, 14, 768, 1920);
+      padding: 0.5rem 1.25rem;
+    }
+  }
+}

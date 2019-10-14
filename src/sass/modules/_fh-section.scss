@@ -1,0 +1,20 @@
+.fh-section {
+  @include media-breakpoint-up(xl) {
+    background-repeat: no-repeat;
+    background-position: 0 70%;
+    background-size: 102%;
+    background-image: url($storageSvgPath+'last-sect-path.svg');
+    padding-top: 12vw;
+    margin-top: -12vw !important;
+  }
+
+  > div {
+    + div {
+      margin-top: 33px;
+
+      @include media-breakpoint-up(xl) {
+        margin-top: calcPercent(133, 1920) + vw;
+      }
+    }
+  }
+}

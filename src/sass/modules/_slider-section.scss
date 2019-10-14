@@ -1,0 +1,76 @@
+.slider {
+  &-section {
+    position: relative;
+
+    @include media-breakpoint-up(xl) {
+      padding-top: 3.5vw !important;
+    }
+
+    @include media-breakpoint-up(xl) {
+      background-image: url($storageSvgPath+'slider-section-bg-path.svg');
+      background-repeat: no-repeat;
+      background-position: 16% 166%;
+      background-size: 112vw;
+      margin-top: 0px !important;
+      padding: 80px 0 30vw;
+
+      .video-section {
+        position: unset;
+
+        video {
+          position: absolute;
+          top: 0%;
+          width: 85%;
+          right: 0;
+          z-index: -1;
+          border: none;
+        }
+      }
+    }
+
+    .slider-container {
+      max-width: calcPercent(335, 375) * 1%;
+      margin: 0 auto;
+
+      @include media-breakpoint-up(xl) {
+        max-width: calcPercent(1586, 1920) * 1%;
+        background-color: $color-white;
+        border-radius: 15px;
+        box-shadow: 1px 1px 4px rgba($color-slate, 0.25);
+
+        background-image: url($storageSvgPath+'slider-section-path.svg');
+        background-repeat: no-repeat;
+        background-position: right top;
+      }
+    }
+
+    @include media-breakpoint-up(xl) {
+      .slider-slide {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 1.75vw 0;
+
+        min-height: vw(705, 1920);
+      }
+    }
+
+    &__contents {
+      text-align: center;
+
+      @include media-breakpoint-down(md) {
+        margin-bottom: 1rem;
+      }
+
+      @include media-breakpoint-up(xl) {
+        position: relative;
+        left: calcPercent(180, 1920) + vw;
+        text-align: left;
+
+        .main-description {
+          max-width: calcPercent(424, 1920) + vw;
+        }
+      }
+    }
+  }
+}

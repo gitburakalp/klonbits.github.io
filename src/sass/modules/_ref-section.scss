@@ -1,0 +1,341 @@
+.ref {
+  &-section {
+    position: relative;
+    width: 100%;
+
+    .title--light {
+      position: absolute;
+      right: calcPercent(155, 1920) * 1%;
+      bottom: 20%;
+    }
+
+    @include media-breakpoint-up(xl) {
+      padding-left: calcPercent(321.5, 1920) * 1%;
+      padding-right: calcPercent(321.5, 1920) * 1%;
+      padding-bottom: 25vh;
+    }
+  }
+
+  &-count {
+    position: relative;
+    text-align: right;
+
+    @include media-breakpoint-down(lg) {
+      padding-left: 45px;
+      padding-right: 45px;
+      text-align: center;
+
+      margin-top: 2rem;
+
+      + * {
+        margin-top: 4rem;
+      }
+    }
+
+    @include media-breakpoint-up(xl) {
+      + * {
+        margin-top: calcPercent(100, 1080) + vh;
+      }
+    }
+
+    .count-elem {
+      font-family: $FontFamilySansSerif;
+      font-size: 26px;
+      font-weight: 300;
+      line-height: 1.2;
+      color: $color-slate;
+
+      @include media-breakpoint-up(xl) {
+        margin-right: 5vw;
+        font-size: fluidSize(20, 40, 1280, 1920);
+      }
+
+      .count {
+        display: block;
+        color: $color-cerulean;
+        font-size: 45px;
+
+        @include media-breakpoint-up(xl) {
+          font-size: fluidSize(30, 90, 1280, 1920);
+          transform: translateX(5%);
+        }
+      }
+
+      .sub-desc {
+        display: block;
+        color: $color-dull-orange;
+
+        @include media-breakpoint-up(xl) {
+          transform: translateX(-5%);
+        }
+      }
+    }
+  }
+
+  &-slider {
+    &__title {
+      font-family: $FontFamilySansSerif;
+      font-weight: 300;
+      color: $color-slate;
+      line-height: 1;
+
+      @include media-breakpoint-down(lg) {
+        display: none;
+      }
+
+      @include media-breakpoint-up(xl) {
+        font-size: vw(45, 1920);
+      }
+
+      b {
+        display: block;
+        font-weight: 600;
+      }
+    }
+
+    &__description {
+      font-family: $FontFamilySansSerif;
+      font-weight: 400;
+      color: $color-slate;
+      line-height: 1.2;
+
+      @include media-breakpoint-down(lg) {
+        display: none;
+      }
+
+      @include media-breakpoint-up(xl) {
+        font-size: vw(16, 1920);
+      }
+    }
+
+    img {
+      max-width: 100%;
+      width: auto;
+      height: 12vw;
+
+      @include media-breakpoint-up(xl) {
+        height: vw(120, 1920);
+      }
+    }
+
+    @include media-breakpoint-up(xl) {
+      max-width: calcPercent(1206, 1920) + vw;
+      margin-bottom: vw(50, 1920);
+      filter: drop-shadow(-2rem 2rem 0 rgba($color-cerulean, 0.06));
+      box-shadow: 0px 0px 4px rgba($color-slate, 0.35);
+
+      &__contents {
+        img {
+          max-width: 100%;
+          width: auto;
+          height: vw(40, 1920);
+        }
+
+        > * {
+          + * {
+            margin-top: vw(16, 1920);
+          }
+        }
+      }
+    }
+
+    &-block {
+      @include media-breakpoint-up(xl) {
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          width: 97%;
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: -0.5vw;
+          height: 2vw;
+          background-color: rgba($color-cerulean, 0.15);
+          filter: blur(10px);
+        }
+      }
+
+      .slider-controls {
+        display: none;
+        position: absolute;
+        z-index: 99;
+
+        @include media-breakpoint-up(xl) {
+          display: block;
+          bottom: 0;
+          left: -3vw;
+          right: -3vw;
+
+          > * {
+            position: absolute;
+            bottom: 5%;
+            cursor: pointer;
+            color: $color-cerulean;
+            transition: transform 400ms ease;
+            font-size: vw(50, 1920);
+            filter: drop-shadow(-4px 4px 4px rgba($color-slate, 0.5));
+
+            &:hover {
+              transform: scale(1.1);
+            }
+
+            &:focus {
+              box-shadow: none;
+              outline: none;
+              border: none;
+            }
+
+            &:active {
+              transform: scale(0.75);
+            }
+
+            &.prev {
+              left: 4vw;
+            }
+
+            &.next {
+              right: 4vw;
+            }
+          }
+        }
+      }
+
+      &--sm {
+        @extend .ref-slider-block;
+        min-height: 185px;
+
+        @include media-breakpoint-down(lg) {
+          display: none;
+        }
+
+        .card {
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-around;
+          height: 178.66px;
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $color-white;
+            transition: all 500ms ease-in;
+            z-index: 101;
+          }
+
+          .btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            background-color: $color-white;
+
+            &--cerulean {
+              color: $color-cerulean;
+            }
+          }
+
+          &:not(:hover) {
+            &::before {
+              @extend %hidden-obj;
+            }
+
+            .btn {
+              @extend %hidden-obj;
+            }
+          }
+        }
+
+        @include media-breakpoint-up(xl) {
+          max-width: 580px;
+          margin-left: auto;
+          margin-right: auto;
+
+          .slider-wrapper {
+            justify-content: center;
+            padding: 0 10px;
+          }
+
+          &::after {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+
+    &__cards {
+      position: relative;
+
+      @include media-breakpoint-down(lg) {
+        text-align: center;
+        padding: 4rem 1rem;
+      }
+
+      @include media-breakpoint-up(xl) {
+        height: calcPercent(309, 1920) + vw;
+        background-color: $color-white;
+        padding: vw(35, 1920);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+
+    .slider {
+      &-slide {
+        transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+        transition-delay: 400ms;
+
+        &--active {
+          @include media-breakpoint-up(xl) {
+            width: calcPercent(483, 1920) + vw !important;
+            z-index: 9;
+
+            .ref-slider__contents {
+              .ref-slider__title {
+                transition: all 400ms ease-in;
+                transition-delay: 800ms;
+              }
+
+              img {
+                opacity: 0;
+                height: 2.75vw;
+                animation: fadeIn 400ms forwards;
+                animation-delay: 1.25s;
+              }
+
+              .ref-slider__description {
+                transition: all 400ms ease-in;
+                transition-delay: 1.35s;
+              }
+            }
+
+            .ref-slider__cards {
+              box-shadow: 0 10px 20px rgba($color-cerulean, 0.45);
+            }
+          }
+        }
+
+        &:not(.slider-slide--active) {
+          .ref-slider__contents {
+            align-items: center;
+            text-align: center;
+
+            *:not(img) {
+              opacity: 0;
+              visibility: hidden;
+              z-index: -1;
+              max-height: 0px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

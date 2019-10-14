@@ -1,0 +1,171 @@
+.footer {
+  @include media-breakpoint-up(lg) {
+    $val: calcPercent(167, 1920) * 1%;
+    padding-top: $val;
+    padding-left: $val;
+    padding-right: $val;
+  }
+
+  .fab {
+    color: $color-steel;
+    cursor: pointer;
+
+    + .fab {
+      margin-left: 0.5rem;
+    }
+  }
+
+  .border-right {
+    border-color: $color-bluish-grey !important;
+  }
+
+  &-container {
+    $pa: vw(30, 375);
+    position: relative;
+    background-color: $color-pale-grey-two;
+    padding: 15px $pa;
+
+    > .row + .row {
+      margin-top: 30px;
+
+      @include media-breakpoint-up(md) {
+        margin-top: vw(30, 1290);
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      padding: vw(30, 1920) vw(110, 1920);
+    }
+  }
+
+  .f {
+    &-search-input {
+      background-color: transparent;
+      border-top-color: transparent;
+      border-left-color: transparent;
+      border-right-color: transparent;
+      border-radius: 0;
+      border-bottom-color: $color-slate;
+      text-align: center;
+
+      font-size: fluidSize(20, 24, 320, 768);
+      font-weight: 300;
+      line-height: 1.09;
+      letter-spacing: vw(0.24, 375);
+
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+
+      + i {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: fluidSize(20, 24, 320, 768);
+        color: $color-slate;
+        cursor: pointer;
+
+        @include media-breakpoint-up(md) {
+          font-size: fluidSize(20, 34, 768, 1920);
+        }
+      }
+
+      @include media-breakpoint-up(md) {
+        font-size: fluidSize(20, 34, 768, 1920);
+        letter-spacing: vw(0.35, 1920);
+      }
+    }
+  }
+
+  &-title {
+    font-family: $FontFamilySansSerif;
+    font-weight: 300;
+    line-height: 1.2;
+    color: $color-slate;
+    font-size: 18px;
+
+    @include media-breakpoint-down(sm) {
+      &::after {
+        content: "\f078";
+        font-family: "Font Awesome 5 Pro";
+        font-weight: 300;
+
+        position: absolute;
+        right: 15px;
+      }
+    }
+
+    + * {
+      margin-top: 16px;
+
+      @include media-breakpoint-up(lg) {
+        margin-top: vw(23, 1920);
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      font-size: vw(16, 768);
+    }
+
+    @include media-breakpoint-up(lg) {
+      font-size: vw(28, 1920);
+    }
+  }
+
+  &-list {
+    &-section {
+      @include media-breakpoint-down(sm) {
+        [class*="col-"] {
+          margin-top: 1.5rem;
+
+          .footer-title {
+            + .footer-list {
+              display: none;
+            }
+          }
+        }
+      }
+
+      @include media-breakpoint-up(md) {
+        [class*="col-md"] {
+          $val: calcPercent(240, 1920) + vw;
+          flex: 0 0 $val;
+          width: $val;
+
+          + [class*="col-md"] {
+            border-left: 1px solid $color-bluish-grey;
+            padding-left: 15px;
+          }
+        }
+      }
+    }
+
+    &-item {
+      + * {
+        margin-top: 0.5rem;
+
+        @include media-breakpoint-up(lg) {
+          margin-top: vw(16, 1920);
+        }
+      }
+    }
+
+    &-link {
+      font-family: $FontFamilySansSerif;
+      font-size: 14px;
+      line-height: 1.2;
+      color: $color-bluish-grey;
+      cursor: pointer;
+
+      @include media-breakpoint-up(md) {
+        font-size: 12px;
+      }
+
+      @include media-breakpoint-up(xl) {
+        font-size: vw(16, 1920);
+      }
+    }
+  }
+}

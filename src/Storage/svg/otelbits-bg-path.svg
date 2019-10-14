@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Component_26_1" width="4012" height="2866.044" data-name="Component 26 – 1" viewBox="0 0 4012 2866.044">
+    <defs>
+        <style>
+            .cls-1{fill:url(#linear-gradient)}.cls-2{fill:url(#linear-gradient-2)}
+        </style>
+        <linearGradient id="linear-gradient" x1="5.338" x2="5.371" y1=".975" y2="-.518" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#e9eff9"/>
+            <stop offset=".199" stop-color="#edf2fa" stop-opacity=".78"/>
+            <stop offset=".596" stop-color="#f6f9fc" stop-opacity=".365"/>
+            <stop offset=".871" stop-color="#fcfdfe" stop-opacity=".102"/>
+            <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="linear-gradient-2" x1="5.3" x2="5.316" y1=".7" y2="-.394" xlink:href="#linear-gradient"/>
+    </defs>
+    <path id="Path_3082" d="M3128.5 10644.435c-699.623-590.59-981.689 360.3-2136.018-88.759-1044.276-406.244-1826.451 988.3-1826.451 1433.8v-1940.389s1122.7-720.678 2230.953-365.641S3128.5 9123.435 3128.5 9123.435z" class="cls-1" data-name="Path 3082" transform="translate(883.5 -9123.435)"/>
+    <path id="Path_3083" d="M3128.5 10466.917c-364.767 230.483-1358.727-519.537-2136.018 240.674-542.776 530.849-757.41 696.418-1826.451 696.418L-883.5 9782.447s1306.377 595.711 2280.484 52.914c726.8-404.991 1731.516-256.037 1731.516-256.037z" class="cls-2" data-name="Path 3083" transform="translate(883.5 -9123.435)"/>
+</svg>

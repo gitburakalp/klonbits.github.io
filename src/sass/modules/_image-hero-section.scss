@@ -1,0 +1,26 @@
+.image-hero-section {
+  position: relative;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 100%;
+  background-image: url($storageSvgPath+'startProject-path.svg');
+
+  @include media-breakpoint-up(xl) {
+    padding-left: vw(408, 1920);
+    padding-right: vw(312, 1920);
+    padding-bottom: 10vw;
+  }
+
+  .title--light {
+    position: absolute;
+
+    @include media-breakpoint-up(xl) {
+      top: 40%;
+      transform: translateY(-40%) rotate(180deg);
+      left: calcPercent(156.7, 1920) + vw;
+    }
+  }
+}

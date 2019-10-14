@@ -1,0 +1,13 @@
+%hidden-obj {
+  opacity: 0;
+  z-index: -1;
+  visibility: hidden;
+}
+
+%circle-paths {
+  content: "";
+  position: absolute;
+  width: 38%;
+  height: 1px;
+  background-color: rgba($color-slate, 0.25);
+}

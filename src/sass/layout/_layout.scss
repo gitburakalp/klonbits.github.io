@@ -1,0 +1,220 @@
+.text {
+  &-steel {
+    color: $color-steel !important;
+  }
+
+  &-slate {
+    color: $color-slate !important;
+  }
+
+  &-bluish-grey {
+    color: $color-bluish-grey !important;
+  }
+}
+
+input,
+textarea {
+  &.form-control {
+    border-radius: 0;
+    line-height: 1.2;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 4px rgba($color-slate, 0.35);
+      border-color: $color-slate;
+    }
+  }
+}
+
+.page {
+  &--start-a-project {
+    .main section {
+      &:first-child {
+        padding-top: 67.6px;
+
+        @include media-breakpoint-up(md) {
+          padding-top: 141.9px;
+        }
+
+        @include media-breakpoint-up(xl) {
+          padding-top: vw(100.4, 1920);
+        }
+      }
+    }
+  }
+}
+
+.iconic-inputs {
+  position: relative;
+
+  + * {
+    margin-top: 1rem;
+
+    @include media-breakpoint-up(xl) {
+      margin-top: vw(16, 1920);
+    }
+  }
+
+  &.account {
+    > span {
+      &::before {
+        background-image: url($storageSvgPath+'start-a-projectpage/user-icon.svg');
+      }
+    }
+  }
+
+  &.email {
+    > span {
+      &::before {
+        background-image: url($storageSvgPath+'start-a-projectpage/email-icon.svg');
+      }
+    }
+  }
+
+  &.phone {
+    > span {
+      &::before {
+        background-image: url($storageSvgPath+'start-a-projectpage/phone-icon.svg');
+      }
+    }
+  }
+
+  &.house {
+    > span {
+      &::before {
+        background-image: url($storageSvgPath+'start-a-projectpage/house-icon.svg');
+      }
+    }
+  }
+
+  &.world {
+    > span {
+      &::before {
+        background-image: url($storageSvgPath+'start-a-projectpage/world-icon.svg');
+      }
+    }
+  }
+
+  &.message {
+    > span {
+      &::before {
+        background-image: url($storageSvgPath+'start-a-projectpage/message-icon.svg');
+      }
+    }
+  }
+
+  .form-control {
+    font-family: $FontFamilySansSerif;
+    border-color: rgba($color-slate, 0.26);
+    color: $color-steel;
+    border-radius: 5px;
+    line-height: 1.2;
+    font-weight: 400;
+    height: auto;
+
+    font-size: 14px;
+    padding: 14px 40px;
+
+    @include media-breakpoint-up(xl) {
+      font-size: vw(16, 1920);
+      padding: 1vw 55px;
+    }
+
+    &::placeholder {
+      color: rgba($color-steel, 0.5);
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    display: block;
+
+    @include media-breakpoint-up(xl) {
+      top: 16px;
+      left: 20px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 16px;
+
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      @include media-breakpoint-up(md) {
+        width: 25px;
+        height: 25px;
+      }
+
+      @include media-breakpoint-up(xl) {
+        width: vw(25, 1920);
+        height: vw(25, 1920);
+      }
+    }
+  }
+}
+
+.checkbox {
+  &--modified {
+    position: relative;
+
+    input[type='checkbox'] {
+      position: absolute;
+      left: -9999vw;
+
+      &:not(:checked) + label {
+        &::before {
+          background-image: url($storageSvgPath+'unchecked-icon.svg');
+        }
+      }
+
+      &:checked + label {
+        &::before {
+          background-image: url($storageSvgPath+'checked-icon.svg');
+        }
+      }
+    }
+
+    label {
+      font-family: $FontFamilySansSerif;
+      font-size: 10px;
+      font-weight: 300;
+      line-height: 1.2;
+
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        vertical-align: middle;
+
+        @include media-breakpoint-up(md) {
+          width: 34px;
+          height: 34px;
+        }
+
+        @include media-breakpoint-up(xl) {
+          width: vw(30, 1920);
+          height: vw(30, 1920);
+        }
+      }
+
+      @include media-breakpoint-up(md) {
+        font-size: 16px;
+      }
+
+      @include media-breakpoint-up(xl) {
+        font-size: vw(16.125, 1920);
+        font-weight: 500;
+      }
+    }
+  }
+}

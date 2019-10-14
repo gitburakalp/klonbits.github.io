@@ -1,0 +1,19 @@
+.start-project-section {
+  @include media-breakpoint-down(md) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .project-area {
+    @include media-breakpoint-up(xl) {
+      $val: calcPercent(1164, 1920) + vw;
+      flex: 0 0 $val;
+      max-width: $val;
+
+      .main-description {
+        max-width: calcPercent(752, 1164) * 1%;
+        margin: 0 auto;
+      }
+    }
+  }
+}

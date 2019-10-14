@@ -1,0 +1,6 @@
+.container {
+
+    @include media-breakpoint-up(xl) {
+        max-width: calcPercent(1616,1920) + vw;
+    }
+}

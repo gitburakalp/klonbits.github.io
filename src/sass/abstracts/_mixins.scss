@@ -1,0 +1,29 @@
+@mixin makeKeyframe($name) {
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin makePathKeyframe($name, $fromDashOffset, $toDashOffset) {
+  @keyframes #{$name} {
+    from {
+      stroke-dashoffset: $fromDashOffset;
+    }
+    to {
+      stroke-dashoffset: $toDashOffset;
+    }
+  }
+}
+
+@mixin pathAnimationProps(
+  $strokeDashArrayWidth,
+  $strokeDashOffsetWidth,
+  $animName,
+  $animDuration,
+  $animDelay
+) {
+  stroke-dasharray: $strokeDashArrayWidth;
+  stroke-dashoffset: $strokeDashOffsetWidth;
+  animation: $animName $animDuration ease-in alternate forwards;
+  animation-delay: $animDelay;
+}

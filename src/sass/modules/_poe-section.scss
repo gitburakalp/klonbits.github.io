@@ -1,0 +1,36 @@
+.poe-section {
+  position: relative;
+  min-height: 100vh;
+
+  @include media-breakpoint-up(xl) {
+    padding-top: 37vw !important;
+    background-image: url($storageSvgPath+'poe-path.svg');
+    background-repeat: no-repeat;
+    background-size: 103%;
+    background-position: 50% 0;
+    margin-top: -38vw !important;
+    padding-bottom: 10vw;
+
+    &.container {
+      max-width: 100%;
+      padding-left: calcPercent(140, 1920) + vw;
+      padding-right: calcPercent(280, 1920) + vw;
+    }
+
+    .menu-pr {
+      padding-right: calcPercent(200, 1920) + vw;
+    }
+
+    .title-row {
+      [class*='col-'] {
+        padding-left: 12vw;
+      }
+    }
+  }
+
+  .title--light {
+    position: absolute;
+    right: calcPercent(140, 1920) + vw;
+    bottom: 0;
+  }
+}
